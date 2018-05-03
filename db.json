@@ -1,0 +1,54 @@
+{
+  "todos": [
+    {
+      "title": "Learn React",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "Learn Redux",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Learn Native",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "Learn JS",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "title": "Learn ES6",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "title": "MERN stack",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "title": "MEAN stack",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "title": "Angular",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "title": "Hello",
+      "completed": false,
+      "id": 10
+    },
+    {
+      "title": "Wassup",
+      "completed": false,
+      "id": 11
+    }
+  ]
+}
