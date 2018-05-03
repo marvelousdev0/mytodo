@@ -18,12 +18,12 @@ class TodoApp extends Component {
     }
 
     fetchTodos = () => {
-        fetch('http://localhost:4500/todos').then(data => data.json()).then(todos => this.setState({todos})).catch(err => console.log({ err }))
+        fetch('/todos').then(data => data.json()).then(todos => this.setState({todos})).catch(err => console.log({ err }))
     }
 
     handleTodoClick(todo, index) {
         const { id, completed } = todo
-        fetch(`http://localhost:4500/todos/${id}`, {
+        fetch(`/todos/${id}`, {
             method: 'PATCH',
             headers,
             body: JSON.stringify({completed: !completed})
@@ -32,7 +32,7 @@ class TodoApp extends Component {
 
     handleToggleAll = allToggled => {
         const { todos } = this.state
-        Promise.all(todos.map(todo => fetch(`http://localhost:4500/todos/${todo.id}`,{
+        Promise.all(todos.map(todo => fetch(`/todos/${todo.id}`,{
             method: 'PATCH',
             headers,
             body: JSON.stringify({completed: !allToggled})
@@ -57,7 +57,7 @@ class TodoApp extends Component {
         const value = newTodo.trim();
 
         if (value) {
-            fetch('http://localhost:4500/todos', {
+            fetch('/todos', {
                 method: 'POST',
                 headers,
                 body: JSON.stringify({ title: value, completed: false, })
@@ -66,14 +66,14 @@ class TodoApp extends Component {
     }
 
     handleDelete = id => {
-        fetch(`http://localhost:4500/todos/${id}`, { method: 'DELETE', headers, }).then(this.fetchTodos)
+        fetch(`/todos/${id}`, { method: 'DELETE', headers, }).then(this.fetchTodos)
     }
 
     handleClearCompleted = () => {
         const { todos } = this.state
         const completedTodos = todos.filter(todo => todo.completed)
 
-        Promise.all(completedTodos.map(todo => fetch(`http://localhost:4500/todos/${todo.id}`,{ method: 'DELETE', headers, }))).then(this.fetchTodos)
+        Promise.all(completedTodos.map(todo => fetch(`/todos/${todo.id}`,{ method: 'DELETE', headers, }))).then(this.fetchTodos)
     }
 
     render() {
