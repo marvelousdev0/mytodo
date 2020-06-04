@@ -4,7 +4,7 @@
   "private": true,
   "proxy":"http://localhost:4500",
   "dependencies": {
-    "json-server": "^0.12.2",
+    "json-server": "^0.16.1",
     "npm": "^6.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
