@@ -5,7 +5,7 @@
   "proxy":"http://localhost:4500",
   "dependencies": {
     "json-server": "^0.12.2",
-    "npm": "^6.0.0",
+    "npm": "^6.13.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
